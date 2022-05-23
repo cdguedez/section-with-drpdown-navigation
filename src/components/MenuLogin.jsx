@@ -19,9 +19,12 @@ const Nav = styled.nav`
     margin: 2px
   }
   a:nth-child(2) {
-    padding: 4px 8px;
+    padding: 8px 12px;
     border: 2px solid #999FA0;
     border-radius: 8px;
     margin-left: 12px;
+  }
+  a:nth-child(2):hover {
+    border: 2px solid #000;
   }
 `
