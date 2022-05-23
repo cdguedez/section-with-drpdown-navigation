@@ -11,5 +11,6 @@ export default Title
 
 const TxtTitle = styled.h1`
   margin: 0;
+  font-weight: 600;
 `
 
