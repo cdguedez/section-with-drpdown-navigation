@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Button = ({ text, color }) => {
+const Button = ({ text, width = '120px' }) => {
   return (
-    <Btn>{text}</Btn>
+    <Btn style={{width}}>{text}</Btn>
   )
 }
 
@@ -14,4 +14,9 @@ const Btn = styled.button`
   color: #fff;
   padding: 8px 12px;
   border-radius: 8px;
+  :hover {
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+  }
 `
