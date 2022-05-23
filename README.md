@@ -1,4 +1,4 @@
-# challengue of Frontend Mentor
+# challenge of Frontend Mentor
 
 Author: Carlos Guedez
 
