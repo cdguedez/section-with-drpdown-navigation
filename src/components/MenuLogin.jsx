@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+import Link from './Link'
 
 const MenuLogin = () => {
   return (
     <Nav>
-      <a href="/">Login</a>
-      <a href="/">Register</a>
+      <Link to="#">Login</Link>
+      <Link to="#">Register</Link>
     </Nav>
   )
 }
@@ -14,8 +15,6 @@ export default MenuLogin
 
 const Nav = styled.nav`
   a {
-    text-decoration: none;
-    color: #999FA0;
     margin: 2px
   }
   a:nth-child(2) {
