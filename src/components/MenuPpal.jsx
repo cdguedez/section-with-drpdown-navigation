@@ -10,13 +10,18 @@ const MenuPpal = () => {
   const [isToggleFeature, setIsToggleFeature] = useState(false)
   const [isToggleCompany, setIsToggleCompany] = useState(false)
 
+  const toggleSubMenu = (toggle, typeMenu) => {
+    if (typeMenu === 'features')  setIsToggleFeature(!toggle)
+    if (typeMenu === 'company')   setIsToggleCompany(!toggle)
+  }
+
   return (
     <Container>
-      <li onClick={() => setIsToggleFeature(!isToggleFeature)}>
+      <li onClick={() => toggleSubMenu(isToggleFeature, 'features')}>
         <Link to="#" icon={Img}>Features</Link>
         <NavSubMenu  isVisible={isToggleFeature} items={menuFeatures} />
       </li>
-      <li onClick={() => setIsToggleCompany(!isToggleCompany)} >
+      <li onClick={() => toggleSubMenu(isToggleCompany, 'company')} >
         <Link to="#" icon={Img}>Company</Link>
         <NavSubMenu isVisible={isToggleCompany} items={menuCompany} />
       </li>
