@@ -11,8 +11,14 @@ const MenuPpal = () => {
   const [isToggleCompany, setIsToggleCompany] = useState(false)
 
   const toggleSubMenu = (toggle, typeMenu) => {
-    if (typeMenu === 'features')  setIsToggleFeature(!toggle)
-    if (typeMenu === 'company')   setIsToggleCompany(!toggle)
+    if (typeMenu === 'features') {
+      if (isToggleCompany) setIsToggleCompany(false)
+      setIsToggleFeature(!toggle)
+    }
+    if (typeMenu === 'company') {
+      if (isToggleFeature) setIsToggleFeature(false) 
+      setIsToggleCompany(!toggle)
+    }
   }
 
   return (
