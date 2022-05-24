@@ -1,24 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import { BsChevronCompactDown } from 'react-icons/bs'
+import Link from './Link'
+import NavSubMenu from './NavSubMenu'
+import menuCompany from './../routes/company.routes'
+import menuFeatures from './../routes/features.routes'
+import Img from './../assets/images/icon-arrow-down.svg'
 
 const MenuPpal = () => {
+  const [isToggleFeature, setIsToggleFeature] = useState(false)
+  const [isToggleCompany, setIsToggleCompany] = useState(false)
+
   return (
-    <Nav>
-      <a href="#">Features <BsChevronCompactDown onClick={() => console.log('click in icon')}/></a>
-      <a href="/">Company <BsChevronCompactDown onClick={() => console.log('click in icon')}/></a>
-      <a href="/">Careers</a>
-      <a href="/">About</a>
-    </Nav>
+    <Container>
+      <li onClick={() => setIsToggleFeature(!isToggleFeature)}>
+        <Link to="#" icon={Img}>Features</Link>
+        <NavSubMenu  isVisible={isToggleFeature} items={menuFeatures} />
+      </li>
+      <li onClick={() => setIsToggleCompany(!isToggleCompany)} >
+        <Link to="#" icon={Img}>Company</Link>
+        <NavSubMenu isVisible={isToggleCompany} items={menuCompany} />
+      </li>
+      <li>
+        <Link to="#">Careers</Link>
+      </li>
+      <li><Link to="#">About</Link></li>
+    </Container>
   )
 }
 
 export default MenuPpal
 
-const Nav = styled.nav`
-  a {
-    text-decoration: none;
-    color: #999FA0;
-    margin: 0 8px
+const Container = styled.ul`
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  align-items: center;
+  li {
+    margin: 0 20px
   }
 `
